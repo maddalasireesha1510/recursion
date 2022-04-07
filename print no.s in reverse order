@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+void print(int x,int n)
+{
+if(n<x){
+return;
+}
+else{
+cout<<n;
+}
+print(x,n-1);
+}
+int main()
+{
+int n;
+cin>>n;
+print(1,n);
+}
