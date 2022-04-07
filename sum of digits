@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+void add(int s,int x)
+{
+if(x==0)
+{
+cout<<s;
+return;
+}
+s+=x%10;
+add(s,x/10);
+}
+int main()
+{
+int x,s=0;
+cin>>x;
+add(s,x);
+}
+//2346
