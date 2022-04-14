@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+void combinationsum(int ind,int t,int n,int a[],vector<int>& ds)
+{
+    if(ind==n)
+    {
+        if(t==0)
+        {
+            for(auto it:ds)
+            {
+                cout<<it<<" ";
+            }
+            cout<<"\n";
+        }
+        return;
+    }
+    if(a[ind]<=t)
+    {
+        ds.push_back(a[ind]);
+        combinationsum(ind,t-a[ind],n,a,ds);
+        ds.pop_back();
+    }
+    combinationsum(ind+1,t,n,a,ds);
+}
+int main()
+{
+    int n,t;
+    cin>>n>>t;
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    vector<int>ds;
+    combinationsum(0,t,n,a,ds);
+}
